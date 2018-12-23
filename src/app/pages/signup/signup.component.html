@@ -1,0 +1,23 @@
+<div class="container-wrapper container d-flex justify-content-center align-items-center">
+  <div class="form-wrapper text-center">
+    <h2 class="text-center">Sign Up</h2>
+    <form [formGroup]="signupForm" (submit)="submit()" novalidate>
+      <div class="name-wrapper d-flex">
+        <div class="form-group">
+          <input type="text" id="first-name-input" placeholder="First Name" formControlName="firstName" class="form-control first-name">
+        </div>
+        <div class="form-group">
+          <input type="text" id="last-name-input" placeholder="Last Name" formControlName="lastName" class="form-control last-name">
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email-input" placeholder="Email" formControlName="email" class="form-control">
+      </div>
+      <div class="form-group">
+        <input type="password" id="password-input" placeholder="password" formControlName="password" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!signupForm.valid">Submit</button>
+    </form>
+    <small><a routerLink="/login">Already have an Account?</a></small>
+  </div>
+</div>

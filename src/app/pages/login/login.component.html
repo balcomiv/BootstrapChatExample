@@ -1,0 +1,17 @@
+<div class="container-wrapper container d-flex justify-content-center align-items-center">
+  <div class="form-wrapper text-center">
+    <h2 class="text-center">Login</h2>
+    <form [formGroup]="loginForm" (submit)="submit()" novalidate>
+      <div class="form-group">
+        <input type="email" id="email-input" placeholder="email" formControlName="email" class="form-control">
+        <div *ngIf="isFieldInvalid('email')" class="error-msg">Please enter a valid email</div>
+      </div>
+      <div class="form-group">
+        <input type="password" id="password-input" placeholder="password" formControlName="password" class="form-control">
+        <div *ngIf="isFieldInvalid('password')" class="error-msg">Please enter a valid password</div>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button>
+    </form>
+    <small><a routerLink="/signup">Need an Account?</a></small>
+  </div>
+</div>
