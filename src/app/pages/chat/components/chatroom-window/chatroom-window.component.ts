@@ -24,12 +24,9 @@ export class ChatroomWindowComponent implements OnInit, OnDestroy, AfterViewChec
     this.subscriptions.push(
       this.chatroomService.selectedChatroom.subscribe(chatroom => {
         this.chatroom = chatroom;
-        // this.loadingService.isLoading.next();
       }),
       this.chatroomService.selectedChatroomMessages.subscribe(messages => {
         this.messages = messages;
-        console.log(`Messages: `, messages);
-        
       })
     );
   }
@@ -37,13 +34,10 @@ export class ChatroomWindowComponent implements OnInit, OnDestroy, AfterViewChec
   ngOnInit() {
     this.subscriptions.push(
       this.route.paramMap.subscribe((params) => {
-        console.log(`param id ${params.get('id')}`, params);
         const chatRoomId = params.get('id');
         this.chatroomService.changeChatroom.next(chatRoomId);
       })
     );
-
-    // this.scrollToBottom();
   }
 
   ngOnDestroy() {
@@ -53,52 +47,13 @@ export class ChatroomWindowComponent implements OnInit, OnDestroy, AfterViewChec
   }
 
   ngAfterViewChecked() {
-    console.log(`===> After View Checked`);
     this.scrollToBottom();
   }
 
   private scrollToBottom(): void {
     if (this.scrollContainer) {
-      const nativeEl = this.scrollContainer.nativeElement;
-      console.log(`scrollHeight: ${nativeEl.scrollHeight}`);
-      
+      const nativeEl = this.scrollContainer.nativeElement; 
       nativeEl.scrollTop = nativeEl.scrollHeight;
     }
-    //   #list  [scrollTop]="list.scrollHeight"
   }
-
-  /*
-
-  //  TODO: replace with firebase data
-  dummyData = [
-    {
-      message: 'Message one, dsjfkdsjf sdjf ksf.',
-      createDt: new Date(),
-      sender: {
-        firstName: 'Steve',
-        lastName: 'Smith',
-        photoUrl: 'http://via.placeholder.com/50x50',
-      }
-    },
-    {
-      message: 'Meassage two, slfdjsdf  dsjf lsjdflj.',
-      createDt: new Date(),
-      sender: {
-        firstName: 'Bob',
-        lastName: 'Anderson',
-        photoUrl: 'http://via.placeholder.com/50x50',
-      }
-    },
-    {
-      message: 'Message three, skdjfsaljf sdkfj s dskjflsf.',
-      createDt: new Date(),
-      sender: {
-        firstName: 'Sally',
-        lastName: 'Jones',
-        photoUrl: 'http://via.placeholder.com/50x50',
-      }
-    }
-  ];
-  */
-
 }
