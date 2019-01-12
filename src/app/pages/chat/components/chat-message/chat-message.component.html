@@ -3,10 +3,10 @@
       <img [src]="message.sender.photoUrl" class="rounded-circle">
   </div>
   <div class="bubble d-flex flex-column">
-    <div class="d-flex align-items-baseline">
-      <span class="name">{{message.sender.firstName}} {{message.lastName}}</span>
-      <span class="timestamp">{{message.createDt.toDate() | date: 'medium'}}</span>
+    <div class="name">
+      {{message.sender.firstName}} {{message.lastName}}
     </div>
+    <small class="timestamp">{{message.createDt.toDate() | date: 'medium'}}</small>
     <div class="message">
       {{message.message}}
     </div>

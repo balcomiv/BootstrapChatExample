@@ -15,8 +15,7 @@ import { ChatroomListComponent } from './pages/chat/components/chatroom-list/cha
 import { ChatroomTitleBarComponent } from './pages/chat/components/chatroom-title-bar/chatroom-title-bar.component';
 import { ChatMessageComponent } from './pages/chat/components/chat-message/chat-message.component';
 import { ChatroomWindowComponent } from './pages/chat/components/chatroom-window/chatroom-window.component';
-import { ProfileComponent } from './pages/profile/profile.component';
-import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+
 
 //  Firestore Modules
 import { AngularFireModule } from '@angular/fire';
@@ -26,8 +25,8 @@ import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
 
 //  Bootstrap Modules
 import { AlertModule } from 'ngx-bootstrap/alert';
-import { CollapseModule } from 'ngx-bootstrap/collapse';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -52,8 +51,6 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
     //  Third party - Bootstrap
     AlertModule.forRoot(),
-    CollapseModule.forRoot(),
-    BsDropdownModule.forRoot(),
 
     //  Third party - AngularFire
     AngularFireModule.initializeApp(environment.firebaseConfig),

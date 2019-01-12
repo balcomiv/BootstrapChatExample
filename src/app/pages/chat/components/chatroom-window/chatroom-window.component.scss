@@ -5,15 +5,13 @@
 }
 
 .select-room {
-    .select-room-messages {
-        width: 40%;
-        height: 7%;
+    .select-room-message {
+        width: 30%;
+        height: 5%;
         margin-bottom: 10%;
-        border: 2px solid $light-grey;
+        // border: 2px solid $gold;
         justify-content: center;
-        align-items: center;
         font-size: 1.2em;
         display: flex;
-        box-shadow: 0 5px 10px $light-grey;
     }
 }
