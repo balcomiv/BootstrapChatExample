@@ -8,6 +8,7 @@ import { User } from 'src/app/interfaces/user';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  show:boolean = false;
   currentUser: User;
 
   constructor(
@@ -20,5 +21,9 @@ export class NavbarComponent implements OnInit {
         
   onLogout() {
     this.authService.logout();
+  }
+
+  toggleCollapse() {
+    this.show = !this.show
   }
 }
